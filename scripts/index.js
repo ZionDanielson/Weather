@@ -109,14 +109,10 @@ function weatherAPI(){
     const theSelectedCity = cities.find(city => city.name === selectedCity);
     const stationLookupUrl = `https://api.weather.gov/points/${theSelectedCity.latitude},${theSelectedCity.longitude}`;
 
-console.log(theSelectedCity.longitude);
-console.log(theSelectedCity.latitude);
-
-
     fetch(stationLookupUrl)                                        
         .then(response => response.json())                           
         .then(data => {
-            const weatherUrl = data.properties.forecast;
+            const weatherUrl = data.properties.forecast;   // Get the forcast
             getWeather(weatherUrl);
         })
     }
@@ -126,11 +122,11 @@ console.log(theSelectedCity.latitude);
             fetch(weatherUrl)
                 .then(response => response.json())
                 .then(data => {
-                    const forecastArray = data.properties.periods;
-            displayWeather(forecastArray);
+                    const forecastArray = data.properties.periods;  //get the periods
+            displayWeather(forecastArray);                          // display the periods in an array  
                 })
     }
 
-function displayWeather(forecastArray){
+function displayWeather(forecastArray){   // This is where we will insert it into the table
     console.log(forecastArray);
 }
