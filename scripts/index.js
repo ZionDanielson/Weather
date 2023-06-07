@@ -12,6 +12,7 @@ const longitudeOutput = document.getElementById("longitudeOutput"); // Longitude
 const geoCard = document.getElementById("geoCard"); //Geographic Location Card
 const table = document.getElementById("table"); // Table with weather information
 
+const weathertablebody = document.getElementById("weathertablebody"); // the weather table
 
 /*____________________________________________________________________________________________*/
 
@@ -63,7 +64,7 @@ function showGeographicLocation() {
 
         showGeographicLocationCard();
         showTableCard();
-        weatherAPI();
+        getWeatherFromAPIForCity();
     }
 }
 
@@ -104,7 +105,7 @@ function showTableCard() {
 // longitude, and latitude
 
 
-function weatherAPI(){ 
+function getWeatherFromAPIForCity(){ 
 
     const theSelectedCity = cities.find(city => city.name === selectedCity);
     const stationLookupUrl = `https://api.weather.gov/points/${theSelectedCity.latitude},${theSelectedCity.longitude}`;
@@ -127,6 +128,20 @@ function weatherAPI(){
                 })
     }
 
-function displayWeather(forecastArray){   // This is where we will insert it into the table
-    console.log(forecastArray); //Checking to see if the array has been formed
+function displayWeather(forecastArray){   
+    console.log(forecastArray); // Checking to see if the array has been formed
+
+    // lets create the table
+
+    for(let rowdata of forecastArray){
+        let newrow = weathertablebody.insertRow(-1);
+        let newcell1 = newrow.insertCell(0);
+        newcell1.innerHTML = rowdata.name;
+
+        let newcell2 = newrow.insertCell(1)
+        newcell2.innerHTML = rowdata.temperature + rowdata.temperatureUnit;
+
+    }
+    
+
 }
