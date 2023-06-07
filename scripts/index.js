@@ -100,14 +100,14 @@ function showTableCard() {
 /*____________________________________________________________________________________________*/
 
 
-// Function - This is going to look up the weather content for the city selected using the city,
+// Function - This is going to fetch the weather content for the city selected using the city,
 // longitude, and latitude
 
 const stationLookupUrl = `https://api.weather.gov/points/${selectedCity.latitude},${selectedCity.longitude}`;
 
 function weatherAPI(){ 
-    fetch(stationLookupUrl)
-        .then(response => response.json())
+    fetch(stationLookupUrl)                                        
+        .then(response => response.json())                           
         .then(data => {
             const weatherUrl = data.properties.forecast;
             getWeather(weatherUrl);
@@ -125,5 +125,5 @@ function weatherAPI(){
     }
 
 function displayWeather(forecastArray){
-    console.log(`This is the weather forecast information`)
+    console.log(forecastArray);
 }
