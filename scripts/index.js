@@ -128,5 +128,5 @@ function weatherAPI(){
     }
 
 function displayWeather(forecastArray){   // This is where we will insert it into the table
-    console.log(forecastArray);
+    console.log(forecastArray); //Checking to see if the array has been formed
 }
