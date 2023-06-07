@@ -103,15 +103,27 @@ function showTableCard() {
 // Function - This is going to look up the weather content for the city selected using the city,
 // longitude, and latitude
 
-function weatherAPI() {
+const stationLookupUrl = `https://api.weather.gov/points/${selectedCity.latitude},${selectedCity.longitude}`;
 
-    let stationLookupUrl = `https://api.weather.gov/points/${selectedCity.latitude},${selectedCity.longitude}`;
-
+function weatherAPI(){ 
     fetch(stationLookupUrl)
-    .then(response => response.json())
-    .then(data => {
-        let weatherUrl = data.properties.forecast;
-        getWeather(weatherUrl);
-       }
-    )
+        .then(response => response.json())
+        .then(data => {
+            const weatherUrl = data.properties.forecast;
+            getWeather(weatherUrl);
+        })
     }
+
+
+ function getWeather(weatherUrl) {
+            fetch(weatherUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const forecastArray = data.properties.periods;
+            displayWeather(forecastArray);
+                })
+    }
+
+function displayWeather(forecastArray){
+    console.log(`This is the weather forecast information`)
+}
