@@ -103,16 +103,11 @@ function showTableCard() {
 // Function - This is going to fetch the weather content for the city selected using the city,
 // longitude, and latitude
 
-const theSelectedCity = cities.find(city => city.name === selectedCity);
-const stationLookupUrl = `https://api.weather.gov/points/${theSelectedCity.latitude},${theCelectedCity.longitude}`;
-
-console.log(theSelectedCity.longitude);
-console.log(theSelectedCity.latitude);
 
 function weatherAPI(){ 
 
     const theSelectedCity = cities.find(city => city.name === selectedCity);
-    const stationLookupUrl = `https://api.weather.gov/points/${theSelectedCity.latitude},${theCelectedCity.longitude}`;
+    const stationLookupUrl = `https://api.weather.gov/points/${theSelectedCity.latitude},${theSelectedCity.longitude}`;
 
 console.log(theSelectedCity.longitude);
 console.log(theSelectedCity.latitude);
