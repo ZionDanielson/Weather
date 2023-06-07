@@ -47,7 +47,7 @@
     </nav>
 
 
-    <main>
+    <main class="d-flex flex-wrap justify-content-center py-3">
         <!--TITLE-->
         <h1 class="text-white d-flex flex-wrap justify-content-center">Check the Weather</h1>
         <h1 class="text-white d-flex flex-wrap justify-content-center">Near You</h1>
@@ -56,7 +56,7 @@
             <div class="row mt-2">
                 <div class="col">
                     <select title="citiesDropdown" class="form-select shadow p-3 mb-5 rounded"
-                        style="width: 35rem; height: 4rem;" id="citiesDropdown" alt="citiesDropdown">
+                        style="width: 50; height: 3.5rem;" id="citiesDropdown" alt="citiesDropdown">
                         <option class="text-secondary">Choose a city</option>
                     </select>
                 </div>
@@ -67,31 +67,24 @@
             </div>
 
             <!--LONGITUDE & LATITUDE CARD-->
-            <div class="card mt-4 shadow p-3 mb-5 rounded" id="geoCard"
-                style="width: 35rem; height: 8rem; background-color: rgba(162, 200, 235, 0.145);">
+            <div class="container d-flex flex-wrap justify-content-center py-3">
+            <div class="col-1 card mt-4 shadow p-3 mb-5 rounded" id="geoCard"
+                style="width: 81rem; height:13rem; background-color: rgba(162, 200, 235, 0.145);">
+                <div class="card-body">
                 <h5 class="card-subtitle mb-2 text-white d-flex flex-wrap justify-content-center py-3">Geographic
                     Location:</h5>
+                </div>
                 <div class="card-body d-flex flex-wrap justify-content-evenly py-3">
                     <h6 id="latitudeOutput" class="card-subtitle mb-2 text-body-secondary">Latitude:</h6>
                     <h6 id="spacer" class="card-subtitle mb-2 text-body-secondary"> | </h6>
                     <h6 id="longitudeOutput" class="card-subtitle mb-2 text-body-secondary">Longitude:</h6>
                 </div>
             </div>
+            </div>
+        
 
 
             <!--TABLE INFO CARD>>-->
-            <section id="table" class="card mt-4 shadow p-3 mb-5 rounded"
-                style="background-color: rgba(103, 163, 219, 0.119);">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional
-                        content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
-
-            </section>
-
             <section id="table" class="card mt-4 shadow p-3 mb-5 rounded"
                 style="background-color: rgba(103, 163, 219, 0.119);">
                 <div class="card-body">
@@ -103,7 +96,7 @@
                                 <th scope="col">Period</th>
                                 <th scope="col">Temperature</th>
                                 <th scope="col">Winds</th>
-                                <th scope="col"></th>
+                                <th scope="col">Forecast</th>
                             </tr>
                         </thead>
                         <tbody id="weathertablebody">

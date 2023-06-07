@@ -141,7 +141,11 @@ function displayWeather(forecastArray){
         let newcell2 = newrow.insertCell(1)
         newcell2.innerHTML = rowdata.temperature + rowdata.temperatureUnit;
 
-    }
-    
+        let newcell3 = newrow.insertCell(2)
+        newcell3.innerHTML = rowdata.windDirection + " " + rowdata.windSpeed;
 
+        let newcell4 = newrow.insertCell(3)
+        newcell4.innerHTML = rowdata.shortForecast;
+        
+        }
 }
