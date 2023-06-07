@@ -110,6 +110,14 @@ console.log(theSelectedCity.longitude);
 console.log(theSelectedCity.latitude);
 
 function weatherAPI(){ 
+
+    const theSelectedCity = cities.find(city => city.name === selectedCity);
+    const stationLookupUrl = `https://api.weather.gov/points/${theSelectedCity.latitude},${theCelectedCity.longitude}`;
+
+console.log(theSelectedCity.longitude);
+console.log(theSelectedCity.latitude);
+
+
     fetch(stationLookupUrl)                                        
         .then(response => response.json())                           
         .then(data => {
